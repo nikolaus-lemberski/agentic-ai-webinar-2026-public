@@ -1,0 +1,14 @@
+apiVersion: llamastack.io/v1alpha1
+kind: LlamaStackDistribution
+metadata:
+  name: triage-llamastack
+  namespace: triage-assistant
+spec:
+  replicas: 1
+  network:
+    exposeRoute: true
+  server:
+    distribution:
+      name: rh-dev
+    userConfig:
+      configMapName: triage-llamastack-config
